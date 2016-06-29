@@ -50,7 +50,7 @@ header p {
 }
 
 #menu {
-    padding: 3em 0;
+    padding: 3em 0 0 0;
 }
 
 .menu-header {
@@ -82,7 +82,7 @@ h1 {
 .section:last-child {
     border-bottom: 1px solid #373737;
     padding-bottom: 3em;
-    margin-bottom: none;
+    margin-bottom: 1em;
 }
 
 .section:last-child::after {
@@ -129,4 +129,27 @@ h3 {
     right: 0.5em;
     top: 0.4em;
     font-size: 1em;
+}
+
+.options ul {
+    text-align: center;
+    padding: 0;
+}
+
+.options li {
+    display: inline-block;
+}
+
+.options li::after {
+    content: '~';
+    padding: 1em;
+}
+
+.options li:last-child::after {
+    content: '';
+    padding: 0;
+}
+
+.options {
+    padding-bottom: 3em;
 }
