@@ -134,6 +134,7 @@ h3 {
 .options ul {
     text-align: center;
     padding: 0;
+    margin: 0;
 }
 
 .options li {
