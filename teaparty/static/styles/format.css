@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    border: 0;
+    font-family: Vollkorn;
+}
+
+h1, h2 {
+    font-family: 'Unica One';
+    text-transform: uppercase;
+}

@@ -1,9 +1,6 @@
 * {
-    border: 0;
     color: #373737;
-    line-height: 1.4em;
     margin: 0;
-    padding: 0;
     font-family: 'Vollkorn', serif;
 }
 
@@ -57,6 +54,7 @@ header p {
 
 .menu-header {
     border-bottom: 1px solid #373737;
+    margin-bottom: 3em;
 }
 
 h1 {
@@ -64,13 +62,30 @@ h1 {
 }
 
 .section {
-    border-bottom: 1px solid #dcd0c0;
-    margin-bottom: 3em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    position: relative;
+    text-align: center;
+}
+
+.section::after {
+    background: #dcd0c0;
+    bottom: -1px;
+    content: '';
+    height: 1px;
+    position: absolute;
+    margin-left: -25%;
+    width: 50%;
 }
 
 .section:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid #373737;
+    padding-bottom: 3em;
     margin-bottom: none;
+}
+
+.section:last-child::after {
+    height: 0;
 }
 
 h2 {
@@ -88,29 +103,29 @@ h3 {
     font-style: italic;
 }
 
-.row {
-    clear: both;
-    overflow: hidden;
-    margin-bottom: 1em;
+.recipe-item {
+    border-radius: 4px;
+    padding: 1em;
+    position: relative;
+    max-width: 20em;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.column {
-    float: left;
-    margin-right: 2em;
+.recipe-item button {
+    display: none;
 }
 
-.column:last-child {
-    margin-right: 0;
+.recipe-item:hover {
+    background: #e9e2d8;
 }
 
-.column-12 {
-    width: 100%;
+.recipe-item:hover button {
+    display: block;
 }
 
-.column-6 {
-    width: 48%;
-}
-
-.column-4 {
-    width: 30%;
+.close-button {
+    right: 0.5em;
+    top: 0.4em;
+    font-size: 1em;
 }
