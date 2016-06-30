@@ -16,12 +16,18 @@ var MenuItem = React.createClass({
                 <a className="recipe-link">Recipe &raquo;</a>
             );
         }
+        var button = ''
+        if (this.props.showButton > 0) {
+            button = (
+                <button className="close-button" aria-label="Close alert" type="button" onClick={this.removeItem}>
+                      <span aria-hidden="true">&times;</span>
+                </button>
+            );
+        }
         return (
             <div className={classname}>
                 <div className="menu-item" data-equalizer-watch>
-                    <button className="close-button" aria-label="Close alert" type="button" onClick={this.removeItem}>
-                          <span aria-hidden="true">&times;</span>
-                    </button>
+                    {button}
                     <h3>{this.props.name}</h3>
                     {content}
                     {recipe}
@@ -61,7 +67,13 @@ var Section = React.createClass({
         var columnValue = 12 / this.props.count;
         for (var i=0; i < this.props.count; i++) {
             items.push(
-                <MenuItem key={i} itemId={i} name={this.state.items[i].name} content={this.state.items[i].content} removeItem={this.removeItem} columnValue={columnValue} />
+                <MenuItem key={i}
+                          itemId={i}
+                          name={this.state.items[i].name}
+                          content={this.state.items[i].content}
+                          removeItem={this.removeItem}
+                          columnValue={columnValue}
+                          showButton={this.state.available.length > 0}/>
             );
         }
 
