@@ -1,62 +1,3 @@
-var menu = [
-    {
-        count: 4,
-        title: "Tea Selection",
-        data: [
-            {name: "Darjeeling"},
-            {name: "Rose Petal Black"},
-            {name: "Blackcurrant"},
-            {name: "Rooibos"},
-            {name: "Keemun"},
-            {name: "Earl Grey"},
-            {name: "Peppermint"}
-        ]
-    }, {
-        count: 2,
-        title: "Savories",
-        data: [
-            {name: "Some Bullshit Salad",
-             content: "Argula I guess?"},
-            {name: "Asparagus Mini Quiche",
-             content: "Creamy walnut- and navy bean-based vegan quiche"},
-        ]
-    }, {
-        count: 3,
-        title: "Sandwiches",
-        data: [
-            {name: "Cucumber Cream Cheese",
-             content: "Vegan cream cheese with sliced cucumber and dill on white bread"},
-            {name: "Avocado Toast",
-             content: "Sliced avocado on toasted walnut bread, topped with salt and cracked pepper"},
-            {name: "Cheddar &amp; Pickle",
-             content: "Miyoko's Rustic Alpine cashew cheese and pickles on toasted sourdough bread"}
-        ]
-    }, {
-        count: 1,
-        title: "Crumpets",
-        data: [
-            {name: "with Lemon Curd, Jam, Cashew Cream"}
-        ]
-    }, {
-        count: 2,
-        title: "Scones",
-        data: [
-            {name: "Lemon Ginger",
-             content: "Lemon scone with candied ginger"},
-            {name: "Raspberry",
-             content: "Cream scone with fresh fruit"}
-        ]
-    }, {
-        count: 3,
-        title: "Sweets",
-        data: [
-            {name: "Rosemary Shortbread Cookies"},
-            {name: "Peach Tartlettes"},
-            {name: "Pistachio Rosewater Cookies"}
-        ]
-    },
-];
-
 var MenuItem = React.createClass({
     removeItem: function() {
         this.props.removeItem(this.props.itemId);
@@ -64,7 +5,6 @@ var MenuItem = React.createClass({
     render: function() {
         var classname = "columns medium-" + this.props.columnValue;
         var content = '';
-        console.log(this.props);
         if (this.props.content) {
             content = (
                 <p>{this.props.content}</p>
@@ -93,14 +33,27 @@ var MenuItem = React.createClass({
 
 var Section = React.createClass({
     removeItem: function(id) {
+        if (!this.state.available.length) {
+            return;
+        }
+        var item = this.state.items[id];
+        var available = this.state.available;
+        var replacement = available.pop();
+        available.unshift(item);
+
         var items = this.state.items;
-        items[id] = {'name': 'fish sauce'};
-        this.setState({items: items});
+        items[id] = replacement;
+        this.setState({
+            population: this.state.population,
+            items: items,
+            available: available
+        });
     },
     getInitialState: function() {
         return {
             population: this.props.data,
-            items: this.props.data.splice(0, this.props.count)
+            items: this.props.data.splice(0, this.props.count),
+            available: this.props.data
         };
     },
     render: function() {
