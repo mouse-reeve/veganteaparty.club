@@ -7,9 +7,10 @@ var menu = [
             {name: "Rose Petal Black"},
             {name: "Blackcurrant"},
             {name: "Rooibos"},
+            {name: "Peppermint"},
+            {name: "Pu-erh"},
             {name: "Keemun"},
             {name: "Earl Grey"},
-            {name: "Peppermint"}
         ]
     }, {
         count: 2,
@@ -68,7 +69,7 @@ var menu = [
         data: [
             {name: "Rosemary Shortbread Cookies",
              recipe: "https://github.com/mouse-reeve/recipes/blob/master/markdown/rosemary_shortbread.md"},
-            {name: "Peach Tartlettes"},
+            {name: "Peach Tartlets"},
             {name: "Pistachio Rosewater Cookies",
              recipe: "http://www.80cakes.com/2014/07/vegan-rose-pistachio-cookies/"},
             {name: "Gingerbread Cookies"},
