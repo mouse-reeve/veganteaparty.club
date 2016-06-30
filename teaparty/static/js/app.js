@@ -13,7 +13,7 @@ var MenuItem = React.createClass({
         var recipe = '';
         if (this.props.recipe) {
             recipe = (
-                <a className="recipe-link">Recipe &raquo;</a>
+                <a href={this.props.recipe} target="_blank" className="recipe-link">Recipe &raquo;</a>
             );
         }
         var button = ''
@@ -71,6 +71,7 @@ var Section = React.createClass({
                           itemId={i}
                           name={this.state.items[i].name}
                           content={this.state.items[i].content}
+                          recipe={this.state.items[i].recipe}
                           removeItem={this.removeItem}
                           columnValue={columnValue}
                           showButton={this.state.available.length > 0}/>
