@@ -55,43 +55,7 @@
         <div class="menu-header">
             <h1>Afternoon Tea Menu</h1>
         </div>
-        <div class="section">
-            <h2>Tea Selection</h2>
-            <div class="row" data-equalizer>
-                <div class="columns medium-3">
-                    <div class="recipe-item" data-equalizer-watch>
-                        <button class="close-button" aria-label="Close alert" type="button">
-                              <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h3>Darjeeling</h3>
-                    </div>
-                </div>
-                <div class="columns medium-3">
-                    <div class="recipe-item" data-equalizer-watch>
-                        <button class="close-button" aria-label="Close alert" type="button">
-                              <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h3>Rose Petal Black</h3>
-                    </div>
-                </div>
-                <div class="columns medium-3">
-                    <div class="recipe-item" data-equalizer-watch>
-                        <button class="close-button" aria-label="Close alert" type="button">
-                              <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h3>Blackcurrant</h3>
-                    </div>
-                </div>
-                <div class="columns medium-3">
-                    <div class="recipe-item" data-equalizer-watch>
-                        <button class="close-button" aria-label="Close alert" type="button">
-                              <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h3>Rooibos</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="teas"></div>
         <div class="section">
             <h2>Savories</h2>
             <div class="row" data-equalizer>
@@ -172,7 +136,7 @@
                               <span aria-hidden="true">&times;</span>
                         </button>
                         <h3>Lemon Ginger</h3>
-                        <p>Lemon scone with bits of candied ginger</p>
+                        <p>Lemon scone with candied ginger</p>
                         <a class="recipe-link">Recipe &raquo;</a>
                     </div>
                 </div>
@@ -241,6 +205,9 @@
     </footer>
     <script type="text/javascript" src="static/js/vendor/jquery.js"></script>
     <script type="text/javascript" src="static/js/vendor/foundation.min.js"></script>
-    <script type="text/javascript" src="static/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel" src="static/js/app.js"></script>
 </body>
 </html>
