@@ -1,9 +1,7 @@
-$(document).foundation();
-
 var menu = [
     {
         count: 4,
-        title: "Teas",
+        title: "Tea Selection",
         data: [
             {name: "Darjeeling"},
             {name: "Rose Petal Black"},
@@ -22,6 +20,40 @@ var menu = [
             {name: "Asparagus Mini Quiche",
              content: "Creamy walnut- and navy bean-based vegan quiche"},
         ]
+    }, {
+        count: 3,
+        title: "Sandwiches",
+        data: [
+            {name: "Cucumber Cream Cheese",
+             content: "Vegan cream cheese with sliced cucumber and dill on white bread"},
+            {name: "Avocado Toast",
+             content: "Sliced avocado on toasted walnut bread, topped with salt and cracked pepper"},
+            {name: "Cheddar &amp; Pickle",
+             content: "Miyoko's Rustic Alpine cashew cheese and pickles on toasted sourdough bread"}
+        ]
+    }, {
+        count: 1,
+        title: "Crumpets",
+        data: [
+            {name: "with Lemon Curd, Jam, Cashew Cream"}
+        ]
+    }, {
+        count: 2,
+        title: "Scones",
+        data: [
+            {name: "Lemon Ginger",
+             content: "Lemon scone with candied ginger"},
+            {name: "Raspberry",
+             content: "Cream scone with fresh fruit"}
+        ]
+    }, {
+        count: 3,
+        title: "Sweets",
+        data: [
+            {name: "Rosemary Shortbread Cookies"},
+            {name: "Peach Tartlettes"},
+            {name: "Pistachio Rosewater Cookies"}
+        ]
     },
 ];
 
@@ -38,6 +70,12 @@ var MenuItem = React.createClass({
                 <p>{this.props.content}</p>
             );
         }
+        var recipe = '';
+        if (this.props.recipe) {
+            recipe = (
+                <a className="recipe-link">Recipe &raquo;</a>
+            );
+        }
         return (
             <div className={classname}>
                 <div className="menu-item" data-equalizer-watch>
@@ -46,6 +84,7 @@ var MenuItem = React.createClass({
                     </button>
                     <h3>{this.props.name}</h3>
                     {content}
+                    {recipe}
                 </div>
             </div>
         );
@@ -60,16 +99,14 @@ var Section = React.createClass({
     },
     getInitialState: function() {
         return {
-            title: this.props.title,
             population: this.props.data,
-            count: this.props.count,
             items: this.props.data.splice(0, this.props.count)
         };
     },
     render: function() {
         var items = []
-        var columnValue = 12 / this.state.count;
-        for (var i=0; i < this.state.count; i++) {
+        var columnValue = 12 / this.props.count;
+        for (var i=0; i < this.props.count; i++) {
             items.push(
                 <MenuItem key={i} itemId={i} name={this.state.items[i].name} content={this.state.items[i].content} removeItem={this.removeItem} columnValue={columnValue} />
             );
@@ -77,7 +114,7 @@ var Section = React.createClass({
 
         return (
             <div className="section">
-                <h2>{this.state.title}</h2>
+                <h2>{this.props.title}</h2>
                 <div className="row" data-equalizer>
                     {items}
                 </div>
@@ -94,7 +131,6 @@ var Menu = React.createClass({
     },
     render: function() {
         var menu = this.state.menu;
-        console.log(menu);
         return (
             <div id="menu" className="block">
                 <div className="menu-header">
@@ -105,6 +141,9 @@ var Menu = React.createClass({
                         <Section key={section.title} title={section.title} data={section.data} count={section.count} />
                     );
                 })}
+                <div className="section menu-footer">
+                    <h2>the end</h2>
+                </div>
             </div>
         );
     }
@@ -112,3 +151,5 @@ var Menu = React.createClass({
 
 
 ReactDOM.render(<Menu />, document.getElementById('menu'));
+
+$(document).foundation();
