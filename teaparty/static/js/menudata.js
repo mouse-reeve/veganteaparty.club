@@ -61,7 +61,7 @@ var menu = [
              recipe: "http://www.joyofbaking.com/SconesfilledwitheJam.html"},
             {name: "Pumpkin",
              content: "Pumpkin scone with walnuts or pecans",
-             recipe: "http://www.joyofbaking.com/printpages/PumpkinSconesprint.html"},
+             recipe: "/recipe/pumpkin_scones.html"},
         ]
     }, {
         count: 3,
