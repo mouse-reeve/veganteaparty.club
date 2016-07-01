@@ -73,7 +73,7 @@ var menu = [
             {name: "Pistachio Rosewater Cookies",
              recipe: "http://www.80cakes.com/2014/07/vegan-rose-pistachio-cookies/"},
             {name: "Lemon Shortbread Cookies",
-             recipe: "/recipe/lemon_shortbread.html"},
+             recipe: "/recipe/lemon_shortbread_cookies.html"},
             {name: "Gingerbread Cookies"},
             {name: "Jam Tarts",
              recipe: "http://www.joyofbaking.com/JamTarts.html"},
