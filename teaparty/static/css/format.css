@@ -79,13 +79,13 @@ h1 {
     width: 50%;
 }
 
-.section:last-child {
+#menu > .section:last-child {
     border-bottom: 1px solid #373737;
     padding-bottom: 3em;
     margin-bottom: 1em;
 }
 
-.section:last-child::after {
+#menu > .section:last-child::after {
     height: 0;
 }
 
