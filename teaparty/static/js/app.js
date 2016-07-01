@@ -98,24 +98,18 @@ var Menu = React.createClass({
     render: function() {
         var menu = this.state.menu;
         return (
-            <div id="menu" className="block">
-                <div className="menu-header">
-                    <h1>Afternoon Tea Menu</h1>
-                </div>
+            <div>
                 {menu.map(function(section) {
                     return (
                         <Section key={section.title} title={section.title} data={section.data} count={section.count} />
                     );
                 })}
-                <div className="section menu-footer">
-                    <h2>the end</h2>
-                </div>
             </div>
         );
     }
 });
 
 
-ReactDOM.render(<Menu />, document.getElementById('menu'));
+ReactDOM.render(<Menu />, document.getElementById('items'));
 
 $(document).foundation();
