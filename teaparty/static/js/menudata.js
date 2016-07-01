@@ -55,7 +55,7 @@ var menu = [
         data: [
             {name: "Lemon Ginger",
              content: "Lemon scone with candied ginger",
-             recipe: "http://www.joyofbaking.com/SconesLemonGinger.html"},
+             recipe: "/recipe/lemon_ginger_scones.html"},
             {name: "Raspberry Jam",
              content: "Cream scone with fruit preserves",
              recipe: "http://www.joyofbaking.com/SconesfilledwitheJam.html"},
