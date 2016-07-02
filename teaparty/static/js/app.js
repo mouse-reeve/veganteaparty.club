@@ -78,9 +78,17 @@ var Section = React.createClass({
             );
         }
 
+        var subtitle = '';
+        if (this.props.subtitle) {
+            subtitle = (
+                <p>{this.props.subtitle}</p>
+            );
+        }
+
         return (
             <div className="section">
                 <h2>{this.props.title}</h2>
+                {subtitle}
                 <div className="row" data-equalizer>
                     {items}
                 </div>
@@ -101,7 +109,11 @@ var Menu = React.createClass({
             <div>
                 {menu.map(function(section) {
                     return (
-                        <Section key={section.title} title={section.title} data={section.data} count={section.count} />
+                        <Section key={section.title}
+                                 title={section.title}
+                                 subtitle={section.subtitle}
+                                 data={section.data}
+                                 count={section.count} />
                     );
                 })}
             </div>

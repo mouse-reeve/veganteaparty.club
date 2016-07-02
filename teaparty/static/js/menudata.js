@@ -21,7 +21,8 @@ var menu = [
             {name: "Asparagus Mini Quiche",
              content: "Creamy walnut- and navy bean-based vegan quiche"},
             {name: "Cauliflower soup",
-             content: "Small cup of silky cauliflower soup"},
+             content: "Small cup of silky cauliflower soup",
+             recipe: "/recipe/cauliflower_soup.html"},
             {name: "Spring Rolls",
              content: "Vegatables and tofu wrapped in rice paper"},
         ]
@@ -43,24 +44,31 @@ var menu = [
              content: "Sautéed red onion and hummus on sourdough bread"},
         ]
     }, {
-        count: 1,
+        count: 3,
         title: "Crumpets",
+        subtitle: "with",
         data: [
-            {name: "with Lemon Curd, Jam, and Cashew Cream",
-             recipe: "http://blog.kingarthurflour.com/2009/09/18/butters-best-friend-crumpets/"}
+            {name: "Lemon Curd",
+             recipe: "/recipe/vegan_lemon_curd.html"},
+            {name: "Fruit Jam"},
+            {name: "Cashew Cream",
+             recipe: "/recipe/cashew_whipped_cream.html"},
         ]
     }, {
         count: 2,
         title: "Scones",
         data: [
-            {name: "Lemon Ginger",
-             content: "Lemon scone with candied ginger",
+            {name: "Lemon Ginger Scone",
+             content: "Lemon with candied ginger",
              recipe: "/recipe/lemon_ginger_scones.html"},
-            {name: "Raspberry Jam",
-             content: "Cream scone with fruit preserves",
+            {name: "Raspberry Jam Scone",
+             content: "Cream with fruit preserves",
              recipe: "http://www.joyofbaking.com/SconesfilledwitheJam.html"},
-            {name: "Pumpkin",
-             content: "Pumpkin scone with walnuts or pecans",
+            {name: "Gingerbread Scone",
+             content: "Gingerbread with oats and candied ginger",
+             recipe: "/recipe/gingerbread_scones.html"},
+            {name: "Pumpkin Scone",
+             content: "Pumpkin with walnuts or pecans",
              recipe: "/recipe/pumpkin_scones.html"},
         ]
     }, {
@@ -71,7 +79,7 @@ var menu = [
              recipe: "https://github.com/mouse-reeve/recipes/blob/master/markdown/rosemary_shortbread.md"},
             {name: "Peach Tartlets"},
             {name: "Pistachio Rosewater Cookies",
-             recipe: "http://www.80cakes.com/2014/07/vegan-rose-pistachio-cookies/"},
+             recipe: "/recipe/pistachio_rosewater_cookies.html"},
             {name: "Lemon Shortbread Cookies",
              recipe: "/recipe/lemon_shortbread_cookies.html"},
             {name: "Gingerbread Cookies"},
