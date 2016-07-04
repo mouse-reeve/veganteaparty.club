@@ -7,6 +7,9 @@ var menu = [
             {name: "Rose Petal Black"},
             {name: "Blackcurrant"},
             {name: "Rooibos"},
+            {name: "Genmaicha"},
+            {name: "Oolong"},
+            {name: "Chai Spice"},
             {name: "Peppermint"},
             {name: "Pu-erh"},
             {name: "Keemun"},
@@ -23,6 +26,10 @@ var menu = [
             {name: "Cauliflower soup",
              content: "Small cup of silky cauliflower soup",
              recipe: "/recipe/cauliflower_soup.html"},
+            {name: "Falafel",
+             content: "Miniature fried chickpea patties with tahini"},
+            {name: "Mushroom Tartlets",
+             content: "Mushroom filling in flaky pastry crust"},
             {name: "Spring Rolls",
              content: "Vegatables and tofu wrapped in rice paper"},
         ]
@@ -41,7 +48,7 @@ var menu = [
             {name: "Watercress and Butter",
              content: "Vegan butter and watercress on white bread"},
             {name: "Mushroom Pate",
-             content: "Wild mushrooms and carmelized onions on crusty French bread"},
+             content: "Cremini mushrooms and carmelized onions on crusty French bread"},
             {name: "Sweet Onion & Hummus",
              content: "Sauteed red onion and hummus on sourdough bread"},
         ]
@@ -52,7 +59,8 @@ var menu = [
         data: [
             {name: "Lemon Curd",
              recipe: "/recipe/vegan_lemon_curd.html"},
-            {name: "Fruit Jam"},
+            {name: "Fruit Jam",
+             recipe: "/recipe/quick_jam.html"},
             {name: "Cashew Cream",
              recipe: "/recipe/cashew_whipped_cream.html"},
         ]
@@ -79,14 +87,14 @@ var menu = [
         data: [
             {name: "Rosemary Shortbread Cookies",
              recipe: "https://github.com/mouse-reeve/recipes/blob/master/markdown/rosemary_shortbread.md"},
-            {name: "Peach Tartlets"},
+            {name: "Jam Tarts",
+             recipe: "/recipe/jam_tarts.html"},
             {name: "Pistachio Rosewater Cookies",
              recipe: "/recipe/pistachio_rosewater_cookies.html"},
+            {name: "Peach Tartlets"},
+            {name: "Gingerbread Cookies"},
             {name: "Lemon Shortbread Cookies",
              recipe: "/recipe/lemon_shortbread_cookies.html"},
-            {name: "Gingerbread Cookies"},
-            {name: "Jam Tarts",
-             recipe: "http://www.joyofbaking.com/JamTarts.html"},
             {name: "Mini Cupcakes",
              recipe: "http://www.theppk.com/2010/06/2000/"},
         ]
