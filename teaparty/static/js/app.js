@@ -13,7 +13,7 @@ var MenuItem = React.createClass({
         var recipe = '';
         if (this.props.recipe) {
             recipe = (
-                <a href={this.props.recipe} target="_blank" className="recipe-link">Recipe &raquo;</a>
+                <a href={this.props.recipe} className="recipe-link">Recipe &raquo;</a>
             );
         }
         var button = ''
