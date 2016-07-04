@@ -40,10 +40,10 @@ var menu = [
              content: "Cucumber and sliced avocado with dill and mint on white bread"},
             {name: "Watercress and Butter",
              content: "Vegan butter and watercress on white bread"},
-            {name: "Mushroom Pâté",
+            {name: "Mushroom Pate",
              content: "Wild mushrooms and carmelized onions on crusty French bread"},
             {name: "Sweet Onion & Hummus",
-             content: "Sautéed red onion and hummus on sourdough bread"},
+             content: "Sauteed red onion and hummus on sourdough bread"},
         ]
     }, {
         count: 3,
