@@ -5,15 +5,15 @@ var MenuItem = React.createClass({
     render: function() {
         var classname = "columns medium-" + this.props.columnValue;
         var content = '';
-        if (this.props.content) {
+        if (this.props.data.content) {
             content = (
-                <p>{this.props.content}</p>
+                <p>{this.props.data.content}</p>
             );
         }
         var recipe = '';
-        if (this.props.recipe) {
+        if (this.props.data.recipe) {
             recipe = (
-                <a href={this.props.recipe} className="recipe-link">Recipe &raquo;</a>
+                <a href={this.props.data.recipe} className="recipe-link">Recipe &raquo;</a>
             );
         }
         var button = ''
@@ -28,7 +28,7 @@ var MenuItem = React.createClass({
             <div className={classname}>
                 <div className="menu-item" data-equalizer-watch>
                     {button}
-                    <h3>{this.props.name}</h3>
+                    <h3>{this.props.data.name}</h3>
                     {content}
                     {recipe}
                 </div>
@@ -47,6 +47,7 @@ var Section = React.createClass({
         var replacement = available.pop();
         available.unshift(item);
 
+        this.props.updateSeason(replacement.seasons || [], item.seasons || []);
         var items = this.state.items;
         items[id] = replacement;
         this.setState({
@@ -55,10 +56,24 @@ var Section = React.createClass({
             available: available
         });
     },
+    sendSeasons: function(items, remove) {
+        var seasonlist = [];
+        items.map(function (item) {
+            if (item.seasons && item.seasons.length) {
+                seasonlist = seasonlist.concat(item.seasons);
+            }
+        });
+
+        if (seasonlist.length) {
+            this.props.addSeasons(seasonlist);
+        }
+    },
     getInitialState: function() {
+        var items = this.props.data.splice(0, this.props.count);
+        this.sendSeasons(items);
         return {
             population: this.props.data,
-            items: this.props.data.splice(0, this.props.count),
+            items: items,
             available: this.props.data
         };
     },
@@ -69,9 +84,7 @@ var Section = React.createClass({
             items.push(
                 <MenuItem key={i}
                           itemId={i}
-                          name={this.state.items[i].name}
-                          content={this.state.items[i].content}
-                          recipe={this.state.items[i].recipe}
+                          data={this.state.items[i]}
                           removeItem={this.removeItem}
                           columnValue={columnValue}
                           showButton={this.state.available.length > 0}/>
@@ -98,24 +111,50 @@ var Section = React.createClass({
 });
 
 var Menu = React.createClass({
+    seasons: {"winter": 0, "spring": 0, "summer": 0, "fall": 0},
+    addSeasons: function(seasonlist) {
+        // catalog the initial season counts
+        seasonlist.map(function(item) {
+            this.seasons[item] += 1;
+        }, this);
+    },
+    updateSeason: function(add, remove) {
+        add.map(function(item) {
+            this.seasons[item] += 1;
+        }, this);
+        remove.map(function(item) {
+            this.seasons[item] -= 1;
+        }, this);
+
+        var seasons = this.seasons;
+        var season = Object.keys(seasons).reduce(function(a, b){ return seasons[a] > seasons[b] ? a : b });
+        this.setState({
+            season: season
+        });
+    },
     getInitialState: function() {
         return {
-            menu: menu
+            menu: menu,
+            season: "summer"
         };
     },
     render: function() {
         var menu = this.state.menu;
         return (
             <div>
+                <div id="season" className={this.state.season}></div>
+
                 {menu.map(function(section) {
                     return (
                         <Section key={section.title}
                                  title={section.title}
                                  subtitle={section.subtitle}
                                  data={section.data}
+                                 updateSeason={this.updateSeason}
+                                 addSeasons={this.addSeasons}
                                  count={section.count} />
                     );
-                })}
+                }, this)}
             </div>
         );
     }

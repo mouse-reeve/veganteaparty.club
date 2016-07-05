@@ -189,3 +189,14 @@ h3 {
 .options {
     padding-bottom: 3em;
 }
+
+#season {
+    position: absolute;
+    top: 0.5em;
+    width: 50em;
+    text-align: right;
+}
+
+#season.summer::after {
+    content: '\263c';
+}
