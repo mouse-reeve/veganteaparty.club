@@ -20,11 +20,12 @@ recipes = [
     'cashew_whipped_cream',
     'cauliflower_soup',
     'gingerbread_scones',
-    #'jam_tarts',
+    'jam_tarts',
     'lemon_ginger_scones',
+    'lemon_shortbread_cookies',
     'pistachio_rosewater_cookies',
     'pumpkin_scones',
-    #'quick_jam',
+    'quick_jam',
     'vegan_butter',
     'vegan_lemon_curd'
 ]
