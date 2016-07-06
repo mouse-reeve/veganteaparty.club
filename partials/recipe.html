@@ -1,0 +1,65 @@
+    <div id="recipe" class="block">
+        <div class="recipe-header">
+            <h1>{{ recipe.title }}</h1>
+        </div>
+        <div id="items">
+            {% if recipe.source %}
+            <div class="section recipe-meta">
+                <div class="row">
+                    <div class="columns small-4">
+                        <!--god only knows the cooking time-->
+                        &nbsp;
+                    </div>
+                    <div class="columns small-4">
+                        <a href="{{ recipe.source }}" target="_blank">Source</a>
+                    </div>
+                    <div class="columns small-4">
+                        <!--makes some quantity-->
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="section recipe-meta">
+                <div class="row">
+                    <div class="columns small-6">
+                        god only knows the cooking time
+                    </div>
+                    <div class="columns small-6">
+                        makes some quantity
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="section">
+                <h3>Ingredients</h3>
+                <div class="row">
+                    {% for half in recipe.ingredients %}
+                    <div class="columns medium-6">
+                        <ul>
+                            {% for ingredient in half %}
+                            <li>{{ ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="section">
+                <h3>Instructions</h3>
+                <ul>
+                    {% for step in recipe.steps %}
+                    <li>{{ step }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="section menu-footer">
+            <h2>enjoy</h2>
+        </div>
+    </div>
+    <div class="block options">
+        <ul>
+            <li><a>print</a></li>
+        </ul>
+    </div>
