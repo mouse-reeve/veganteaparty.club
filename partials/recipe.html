@@ -3,8 +3,7 @@
             <h1>{{ recipe.title }}</h1>
         </div>
         <div id="items">
-            {% if recipe.source %}
-            <div class="section recipe-meta">
+            {% if recipe.source %}<div class="section recipe-meta">
                 <div class="row">
                     <div class="columns small-4">
                         <!--god only knows the cooking time-->
@@ -18,8 +17,7 @@
                         &nbsp;
                     </div>
                 </div>
-            </div>
-            {% else %}
+            </div>{% else %}
             <div class="section recipe-meta">
                 <div class="row">
                     <div class="columns small-6">
@@ -29,28 +27,21 @@
                         makes some quantity
                     </div>
                 </div>
-            </div>
-            {% endif %}
+            </div>{% endif %}
             <div class="section">
                 <h3>Ingredients</h3>
                 <div class="row">
-                    {% for half in recipe.ingredients %}
-                    <div class="columns medium-6">
+                    {% for half in recipe.ingredients %}<div class="columns medium-6">
                         <ul>
-                            {% for ingredient in half %}
-                            <li>{{ ingredient }}</li>
-                            {% endfor %}
+                            {% for ingredient in half %}<li>{{ ingredient }}</li>{% endfor %}
                         </ul>
-                    </div>
-                    {% endfor %}
+                    </div>{% endfor %}
                 </div>
             </div>
             <div class="section">
                 <h3>Instructions</h3>
                 <ul>
-                    {% for step in recipe.steps %}
-                    <li>{{ step }}</li>
-                    {% endfor %}
+                    {% for step in recipe.steps %}<li>{{ step }}</li>{% endfor %}
                 </ul>
             </div>
         </div>
