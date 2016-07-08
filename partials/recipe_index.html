@@ -1,0 +1,28 @@
+    <div id="recipe" class="block">
+        <div class="recipe-header">
+            <h1>Recipes</h1>
+        </div>
+        <div id="items">
+            <div class="section">
+                <h3>All recipes</h3>
+                <div class="row">
+                    <div class="columns medium-6">
+                        <ul>
+                            {% for recipe in recipes%}<li>
+                                <a href="{{ recipe.link }}">{{ recipe.text }}</a>
+                            </li>{% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section menu-footer">
+            <h2>enjoy</h2>
+        </div>
+    </div>
+    <div class="block options">
+        <ul>
+            <li><a>share</a></li>
+        </ul>
+    </div>
+
